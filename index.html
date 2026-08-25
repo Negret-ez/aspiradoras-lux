@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lux Ecuador · Aspiradoras Quito</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#E2001A;
+    --red-dark:#A80013;
+    --ink:#221C1B;
+    --paper:#FFFFFF;
+    --mist:#FDEEEC;
+    --line:#F0C7C2;
+    --muted:#7A6F6C;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background-color:var(--paper);
+    background-image:
+      repeating-linear-gradient(45deg, rgba(226,0,26,0.055) 0px, rgba(226,0,26,0.055) 2px, transparent 2px, transparent 46px),
+      repeating-linear-gradient(-45deg, rgba(168,0,19,0.05) 0px, rgba(168,0,19,0.05) 2px, transparent 2px, transparent 46px),
+      radial-gradient(circle at 92% 6%, rgba(226,0,26,0.10), transparent 32%),
+      radial-gradient(circle at 6% 40%, rgba(168,0,19,0.08), transparent 30%),
+      radial-gradient(circle at 88% 82%, rgba(226,0,26,0.08), transparent 34%);
+    background-attachment:fixed;
+    background-repeat:repeat, repeat, no-repeat, no-repeat, no-repeat;
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.brand,.linea-title{font-family:'Fraunces',serif;}
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  ul{list-style:none;}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky; top:0; z-index:60;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:2px solid var(--red);
+  }
+  nav{
+    max-width:1160px; margin:0 auto;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 24px;
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-weight:600; font-size:1.05rem;}
+  .brand img{height:38px; width:auto;}
+  .nav-cta{
+    background:var(--red); color:white; padding:11px 22px;
+    border-radius:100px; font-size:0.88rem; font-weight:600;
+    white-space:nowrap; text-decoration:none;
+  }
+
+  /* ---------- shared section title ---------- */
+  .section-title{
+    text-align:center; font-size:0.8rem; font-weight:700;
+    color:var(--red-dark); text-transform:uppercase; letter-spacing:0.14em;
+    margin-bottom:10px;
+  }
+
+  /* ---------- HERO BANNER FRANJA (Full Width) ---------- */
+  .hero-banner-section{
+    position:relative;
+    width:100%;
+    min-height:500px;
+    height:60vh;
+    max-height:620px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    background:#111;
+  }
+  .hero-video-bg{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:100%;
+    height:100%;
+    transform:translate(-50%, -50%);
+    object-fit:cover;
+    z-index:1;
+    filter:brightness(0.75);
+  }
+  .hero-overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(34,28,27,0.7) 100%);
+    z-index:2;
+  }
+  .hero-content{
+    position:relative;
+    z-index:3;
+    max-width:850px;
+    margin:0 auto;
+    padding:40px 24px;
+    text-align:center;
+    color:#ffffff;
+  }
+  .hero-tag{
+    display:inline-block;
+    color:var(--mist);
+    font-size:0.85rem;
+    font-weight:700;
+    letter-spacing:0.16em;
+    text-transform:uppercase;
+    margin-bottom:14px;
+    text-shadow:0 2px 4px rgba(0,0,0,0.5);
+  }
+  .hero-content h1{
+    font-size:clamp(2.1rem, 4.5vw, 3.4rem);
+    font-weight:600;
+    line-height:1.15;
+    margin-bottom:18px;
+    color:#ffffff;
+    text-shadow:0 3px 12px rgba(0,0,0,0.6);
+  }
+  .hero-content p{
+    color:rgba(255,255,255,0.9);
+    font-size:1.05rem;
+    line-height:1.6;
+    margin:0 auto 28px;
+    max-width:58ch;
+    text-shadow:0 2px 8px rgba(0,0,0,0.6);
+  }
+  .hero-actions{
+    display:flex;
+    gap:16px;
+    justify-content:center;
+    flex-wrap:wrap;
+  }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    background:var(--red); color:white; padding:14px 28px;
+    border-radius:100px; font-weight:600; font-size:0.95rem; text-decoration:none;
+    box-shadow:0 6px 18px rgba(226,0,26,0.4);
+    transition:transform 0.15s ease;
+  }
+  .btn:hover{ transform:translateY(-2px); }
+  .btn-outline{
+    background:rgba(255,255,255,0.12);
+    backdrop-filter:blur(6px);
+    color:#ffffff;
+    border:1.5px solid rgba(255,255,255,0.5);
+    box-shadow:none;
+  }
+  .btn-outline:hover{
+    background:rgba(255,255,255,0.25);
+  }
+
+  /* ---------- PRODUCTOS ---------- */
+  .productos-wrap{max-width:1160px; margin:0 auto; padding:70px 24px;}
+  .linea-block{margin-top:46px;}
+  .linea-block:first-of-type{margin-top:30px;}
+  .linea-title{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--red); color:white;
+    font-family:'Inter',sans-serif;
+    font-size:1rem; font-weight:800; letter-spacing:0.04em;
+    text-transform:uppercase;
+    padding:12px 26px; border-radius:100px;
+    margin-bottom:26px;
+    box-shadow:0 8px 20px rgba(226,0,26,0.3);
+  }
+  .linea-title svg{width:18px; height:18px; fill:white; flex-shrink:0;}
+
+  .product-row{
+    border:1.5px solid var(--line); border-radius:12px;
+    display:grid; grid-template-columns:0.9fr 1.1fr 1fr;
+    overflow:hidden; margin-bottom:22px; background:var(--paper);
+  }
+  @media(max-width:760px){ .product-row{grid-template-columns:1fr;} }
+
+  .row-col{padding:22px; border-right:1px solid var(--line);}
+  .product-row .row-col:last-child{border-right:none;}
+  @media(max-width:760px){
+    .row-col{border-right:none; border-bottom:1px solid var(--line);}
+    .row-col:last-child{border-bottom:none;}
+  }
+
+  .col-img{
+    display:flex; align-items:center; justify-content:center;
+    background:var(--mist); padding:0;
+  }
+  .col-img img{width:100%; height:100%; min-height:220px; object-fit:cover;}
+
+  .row-col h4{
+    color:var(--red); font-size:0.75rem; font-weight:700;
+    text-transform:uppercase; letter-spacing:0.08em; margin-bottom:14px;
+  }
+  .product-name{font-weight:700; font-size:0.98rem; margin-bottom:14px; color:var(--ink);}
+
+  .crown{width:14px; height:14px; flex-shrink:0; margin-top:3px; fill:var(--red);}
+  .beneficios li{display:flex; gap:8px; font-size:0.88rem; margin-bottom:10px;}
+  .beneficios li:last-child{margin-bottom:0;}
+
+  .specs{width:100%; border-collapse:collapse; font-size:0.86rem;}
+  .specs tr{border-top:1px solid var(--line);}
+  .specs tr:first-child{border-top:none;}
+  .specs td{padding:8px 0;}
+  .specs td:first-child{color:var(--muted); width:48%;}
+  .specs td:last-child{font-weight:600; text-align:right;}
+
+  /* ---------- CUADRANTE COMPARATIVO ---------- */
+  .cuadrante-comparativo{
+    border:1.5px solid var(--line); border-radius:12px; overflow:hidden;
+    margin-bottom:22px; background:var(--paper);
+  }
+  .comp-header{padding:22px 22px 4px;}
+  .comp-header h3{font-size:1.05rem; font-weight:700;}
+  .comp-header .comp-sub{color:var(--muted); font-size:0.85rem; margin-top:2px;}
+  
+  .comp-images{
+    display:flex; gap:28px; align-items:flex-end; justify-content:center;
+    padding:30px 22px 24px; background:var(--mist); flex-wrap:wrap;
+  }
+  .comp-images figure{
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:flex-end;
+  }
+  .comp-images img{
+    width:auto;
+    object-fit:contain;
+    margin:0 auto;
+    filter:drop-shadow(0 4px 6px rgba(0,0,0,0.08));
+    transition:transform 0.2s ease;
+    -webkit-mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 72%, transparent 100%);
+    mask-image: radial-gradient(ellipse 90% 90% at 50% 50%, black 72%, transparent 100%);
+  }
+  .comp-images img:hover{ transform:scale(1.04); }
+
+  .img-brilladora{ height:260px; }
+  .img-topper-62{ height:310px; }
+  .img-topper-41{ height:270px; }
+  .img-topper-33{ height:240px; }
+  .img-topper-17{ height:200px; }
+
+  .comp-images figcaption{font-size:0.8rem; color:var(--muted); margin-top:10px; font-weight:600;}
+  .comp-benefits{padding:20px 22px 4px;}
+  .comp-benefits h4{
+    color:var(--red); font-size:0.75rem; font-weight:700;
+    text-transform:uppercase; letter-spacing:0.08em; margin-bottom:12px;
+  }
+  .comp-table-wrap{overflow-x:auto; padding:20px 22px 22px;}
+  table.comp-table{width:100%; border-collapse:collapse; font-size:0.84rem; min-width:520px;}
+  .comp-table th{
+    background:var(--red-dark); color:white; padding:11px 12px;
+    text-align:center; font-weight:700; font-size:0.78rem;
+    text-transform:uppercase; letter-spacing:0.03em;
+  }
+  .comp-table th:first-child{text-align:left; background:var(--ink);}
+  .comp-table td{padding:9px 12px; border-top:1px solid var(--line); text-align:center;}
+  .comp-table td:first-child{text-align:left; color:var(--muted); font-weight:600; background:var(--mist);}
+  .comp-table tr:nth-child(even) td{background:rgba(226,0,26,0.035);}
+  .comp-table tr:nth-child(even) td:first-child{background:var(--mist);}
+
+  /* ---------- CONTACTO (3 CUADRANTES) ---------- */
+  .contacto-wrap{max-width:1160px; margin:0 auto; padding:70px 24px 90px;}
+  .contact-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+    max-width:1160px;
+    margin:24px auto 0;
+    align-items:stretch;
+  }
+  @media(max-width:960px){
+    .contact-grid{grid-template-columns:1fr; max-width:520px;}
+  }
+
+  .contact-box{
+    border:1.5px solid var(--line);
+    border-radius:16px;
+    background:var(--mist);
+    padding:32px 24px;
+    text-align:center;
+    display:flex;
+    flex-direction:column;
+  }
+  .contact-box h2{font-size:1.25rem; font-weight:600; margin-bottom:10px;}
+  .contact-box > p{color:var(--muted); margin-bottom:20px; font-size:0.88rem;}
+  .wa-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    background:#25D366; color:white; width:100%;
+    padding:14px 18px; border-radius:10px; font-weight:700; font-size:0.95rem;
+    text-decoration:none; margin-bottom:20px;
+  }
+  .wa-btn svg{width:20px; height:20px; fill:white;}
+  .info-list{display:flex; flex-direction:column; gap:12px; text-align:left; margin-top:auto;}
+  .info-item{display:flex; align-items:center; gap:10px; font-size:0.88rem;}
+  .info-item .ico{
+    width:32px; height:32px; border-radius:8px; background:white;
+    border:1px solid var(--line); flex-shrink:0;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .info-item .ico svg{width:15px; height:15px; stroke:var(--red-dark); fill:none; stroke-width:2;}
+
+  /* Cuadrante Mapa */
+  .map-box{
+    padding:0;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+  .map-box-header{
+    padding:20px 20px 14px;
+    text-align:center;
+  }
+  .map-box-header h2{font-size:1.25rem; font-weight:600; margin-bottom:4px;}
+  .map-box-header p{color:var(--muted); font-size:0.84rem;}
+  .map-embed{
+    flex:1;
+    min-height:220px;
+    width:100%;
+    border-top:1px solid var(--line);
+  }
+  .map-embed iframe{
+    width:100%;
+    height:100%;
+    border:0;
+    display:block;
+  }
+
+  /* Soporte técnico */
+  .support-box{
+    border-radius:16px; background:linear-gradient(160deg, var(--red) 0%, var(--red-dark) 100%);
+    color:white; padding:32px 24px; text-align:center;
+    display:flex; flex-direction:column; position:relative; overflow:hidden;
+  }
+  .support-box .wave{
+    position:absolute; top:16px; left:16px; width:24px; opacity:0.9;
+  }
+  .support-box .wrench-badge{
+    width:46px; height:46px; border-radius:50%; background:rgba(255,255,255,0.15);
+    display:flex; align-items:center; justify-content:center; margin:0 auto 12px;
+  }
+  .support-box .wrench-badge svg{width:22px; height:22px; stroke:white; fill:none; stroke-width:2;}
+  .support-box h2{font-size:1.25rem; font-weight:600; margin-bottom:10px; color:white;}
+  .support-box > p{color:rgba(255,255,255,0.85); margin-bottom:20px; font-size:0.88rem;}
+  .call-btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    background:white; color:var(--red-dark); width:100%;
+    padding:14px 18px; border-radius:10px; font-weight:700; font-size:0.95rem;
+    text-decoration:none; margin-bottom:20px;
+  }
+  .call-btn svg{width:18px; height:18px; fill:var(--red-dark);}
+  .support-box .info-list{margin-top:auto;}
+  .support-box .info-item{color:white;}
+  .support-box .info-item .ico{background:rgba(255,255,255,0.15); border:none;}
+  .support-box .info-item .ico svg{stroke:white;}
+
+  /* ---------- FLOATING WHATSAPP ---------- */
+  .wa-float{
+    position:fixed; bottom:22px; right:22px; z-index:70;
+    width:58px; height:58px; border-radius:50%;
+    background:#25D366; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 8px 22px rgba(0,0,0,0.25); text-decoration:none;
+  }
+  .wa-float svg{width:28px; height:28px; fill:white;}
+  .wa-float:hover{transform:scale(1.06);}
+
+  footer{
+    background:var(--ink); color:rgba(255,255,255,0.6);
+    padding:28px 24px; text-align:center; font-size:0.8rem;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="brand"><img src="logo-lux.png" alt="Lux"> Lux Ecuador</div>
+    <a class="nav-cta" href="#contacto">Soporte técnico</a>
+  </nav>
+</header>
+
+<!-- ===================== BIENVENIDA (FRANJA COMPLETA) ===================== -->
+<section id="inicio" class="hero-banner-section">
+  <video class="hero-video-bg" autoplay muted loop playsinline>
+    <source src="video-lux.mp4" type="video/mp4">
+  </video>
+
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <div class="hero-tag">Bienvenida</div>
+    <h1>Potencia de succión que deja cada rincón impecable</h1>
+    <p>Máquinas Lux para el cuidado de tu hogar y tu negocio en Quito. Conoce cada equipo, sus beneficios y detalles técnicos — para precio y disponibilidad, escríbenos directo.</p>
+    <div class="hero-actions">
+      <a class="btn" href="#productos">Ver productos</a>
+      <a class="btn btn-outline" href="#contacto">Contáctanos</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PRODUCTOS ===================== -->
+<section id="productos" class="productos-wrap">
+  <div class="section-title">Productos</div>
+
+  <div class="linea-block">
+    <h2 class="linea-title"><svg viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Línea Doméstica</h2>
+
+    <div class="product-row">
+      <div class="row-col col-img"><img src="aspiradora_1.jpg" alt="Aqua Filter 1500 Black"></div>
+      <div class="row-col">
+        <h4>Beneficios</h4>
+        <p class="product-name">Aqua Filter 1500 Black</p>
+        <ul class="beneficios">
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Unidad de salud con cero costo operativo, higiénico y ecológico.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Con el poder del agua y la hidrodinámica limpia, aromatiza y lava el aire, garantizando un 99.97% de efectividad.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Único sistema recomendado para prevenir enfermedades respiratorias y alergias.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Con kit de fragancias, que aromatizan, eliminan olores y medican el ambiente.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Tiene un poder de succión de 2200 mm cl/agua que permite una limpieza de profundidad en alfombras, textiles, almohadas y colchones; eliminando ácaros.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Recoge líquidos derramados en cualquier superficie, con capacidad de almacenamiento de hasta 15 lts. de agua.</li>
+        </ul>
+      </div>
+      <div class="row-col">
+        <h4>Detalles técnicos</h4>
+        <table class="specs">
+          <tr><td>Modelo</td><td>Aqua Filter 1500 Black</td></tr>
+          <tr><td>Marca</td><td>Lux</td></tr>
+          <tr><td>Procedencia</td><td>Europea</td></tr>
+          <tr><td>Potencia del motor</td><td>Nominal 1200 - Máx. 1400</td></tr>
+          <tr><td>Flujo de aire</td><td>32 l/s</td></tr>
+          <tr><td>Longitud del cable</td><td>6 m</td></tr>
+          <tr><td>Capacidad del contenedor</td><td>20 l</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="product-row">
+      <div class="row-col col-img"><img src="aspiradora_2.png" alt="Lux S115"></div>
+      <div class="row-col">
+        <h4>Beneficios</h4>
+        <p class="product-name">Sistema de Salud y limpieza profunda — Lux S115</p>
+        <p style="font-size:0.86rem; color:var(--muted); margin-bottom:12px;">El sistema de salud y limpieza Lux S115 combina alto rendimiento y facilidad de uso, con eficiencia energética y el mejor sistema de filtrado del mercado. Es especialmente adecuado para personas que padecen de alergias y asma.</p>
+        <ul class="beneficios">
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Sistema inteligente de ahorro de energía.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Motor silencioso y de alto rendimiento.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Componentes con forma ergonómica.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Moderna pantalla LCD con grandes símbolos.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Sistema de filtrado exclusivo de 5 fases MEDICLEAN™.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Boquilla automática de alto rendimiento para el suelo.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Probado y recomendado por los expertos.</li>
+        </ul>
+      </div>
+      <div class="row-col">
+        <h4>Detalles técnicos</h4>
+        <table class="specs">
+          <tr><td>Modelo</td><td>Lux S115</td></tr>
+          <tr><td>Marca</td><td>Lux</td></tr>
+          <tr><td>Procedencia</td><td>Europea</td></tr>
+          <tr><td>Potencia del motor</td><td>Nominal 1850W - Máx. 1000W</td></tr>
+          <tr><td>Voltaje</td><td>110 V</td></tr>
+          <tr><td>Longitud del cable</td><td>9 m</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="product-row">
+      <div class="row-col col-img"><img src="aspíradora_3.png" alt="Aqua Filter 2000 Black"></div>
+      <div class="row-col">
+        <h4>Beneficios</h4>
+        <p class="product-name">Sistema de Salud y limpieza profunda — Aqua Filter 2000 Black</p>
+        <ul class="beneficios">
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Sistema de inyección y extracción para lavado de colchones, alfombras y textiles.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Unidad de salud con cero costo operativo, higiénico y ecológico.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Con el poder del agua y la hidrodinámica limpia, aromatiza y lava el aire, garantizando un 99.97% de efectividad.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Único sistema recomendado para prevenir enfermedades respiratorias y alergias.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Con kit de fragancias, que aromatizan, eliminan olores y medican el ambiente.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Tiene un poder de succión de 2200 mm cl/agua que permite una limpieza de profundidad en alfombras, textiles, almohadas y colchones; eliminando ácaros.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Recoge líquidos derramados en cualquier superficie, con capacidad de almacenamiento de hasta 15 lts. de agua.</li>
+        </ul>
+      </div>
+      <div class="row-col">
+        <h4>Detalles técnicos</h4>
+        <table class="specs">
+          <tr><td>Modelo</td><td>Aqua Filter 2000 Black</td></tr>
+          <tr><td>Marca</td><td>Lux</td></tr>
+          <tr><td>Procedencia</td><td>Europea</td></tr>
+          <tr><td>Potencia del motor</td><td>Nominal 1200 - Máx. 1450</td></tr>
+          <tr><td>Flujo de aire</td><td>32 l/s</td></tr>
+          <tr><td>Longitud del cable</td><td>6 m</td></tr>
+          <tr><td>Potencia de la bomba</td><td>48 W</td></tr>
+          <tr><td>Capacidad del contenedor</td><td>20 l</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="product-row">
+      <div class="row-col col-img"><img src="aspiradora_4.png" alt="Abrillantadora B-15"></div>
+      <div class="row-col">
+        <h4>Beneficios</h4>
+        <p class="product-name">Abrillantadora — Modelo B-15</p>
+        <ul class="beneficios">
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Mango ergonómico.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Banda protectora de caucho, que protege sus paredes y muebles.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Bastón de acero inoxidable, que permite que la abrillantadora se pueda trasladar con facilidad.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Sencillos controles en el mango: al moverlo a la posición de operación se enciende el equipo, y si se deja caer accidentalmente se apaga de forma automática.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Sistema balanceado de tres cepillos, que permiten rasquetear, encerar y abrillantar sus pisos, dejándolos como mandados a lacar.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Poleas de baquelita, resistentes al calor.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Cubierta del motor de acero martillado.</li>
+        </ul>
+      </div>
+      <div class="row-col">
+        <h4>Detalles técnicos</h4>
+        <table class="specs">
+          <tr><td>Modelo</td><td>B-15</td></tr>
+          <tr><td>Marca</td><td>Lux</td></tr>
+          <tr><td>Procedencia</td><td>Europea</td></tr>
+          <tr><td>Revoluciones</td><td>1100 R/Pm</td></tr>
+          <tr><td>Longitud del cable</td><td>6 mts</td></tr>
+          <tr><td>Voltaje</td><td>110 V</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="product-row">
+      <div class="row-col col-img"><img src="aspiradora_5.png" alt="Brilladora - Lavadora de Alfombras B-100"></div>
+      <div class="row-col">
+        <h4>Beneficios</h4>
+        <p class="product-name">Brilladora — Lavadora de Alfombras B-100</p>
+        <ul class="beneficios">
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Protección de paredes y muebles: el salpicadero y el parachoques que rodean la lavadora/pulidora protegen las paredes y los muebles.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Bandeja de almacenamiento: una bandeja apropiada para guardar la lavadora/pulidora B-100 cuando no está en uso.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Mango plegable: el exclusivo mango plegable hace que la lavadora/pulidora B-100 se pueda trasladar y guardar rápida y fácilmente.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Porta-accesorios (opcional): guarda todos los accesorios necesarios en forma organizada y lista para usar.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Sencillos controles en el mango: al moverlo a la posición de operación se enciende el equipo, y si se deja caer accidentalmente se apaga de forma automática. El suministro de detergente se controla fácil y precisamente con un disparador cerca del mango.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Sistema balanceado de tres cepillos que limpian y lustran más eficientemente; el potente detergente de espuma seca rejuvenece las alfombras con una suave acción de fregar, dejando un brillo espectacular en los suelos.</li>
+        </ul>
+      </div>
+      <div class="row-col">
+        <h4>Detalles técnicos</h4>
+        <table class="specs">
+          <tr><td>Modelo</td><td>B-100</td></tr>
+          <tr><td>Marca</td><td>Lux</td></tr>
+          <tr><td>Procedencia</td><td>USA</td></tr>
+          <tr><td>Potencia</td><td>450 W</td></tr>
+          <tr><td>Longitud del cable</td><td>12 mts</td></tr>
+          <tr><td>Voltaje</td><td>110 V</td></tr>
+          <tr><td>Capacidad del tanque</td><td>3.4 lt</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="linea-block">
+    <h2 class="linea-title"><svg viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Línea Profesional</h2>
+
+    <div class="product-row">
+      <div class="row-col col-img"><img src="aspiradora_6.jpg" alt="Aspiradora Profesional PowerProf"></div>
+      <div class="row-col">
+        <h4>Beneficios</h4>
+        <p class="product-name">Aspiradora Profesional — PowerProf</p>
+        <p style="font-size:0.86rem; color:var(--muted); margin-bottom:12px;">PowerProf es un aspirador sumamente potente y de tamaño reducido, pensado para aplicaciones profesionales de altas exigencias. Asegura un alto nivel de aspiración constante con un nivel de ruido sumamente bajo, gracias a su motor industrial, manguera cónica, tubo telescópico, boquilla automática y sistema de filtrado de 3 niveles.</p>
+        <ul class="beneficios">
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Motor de alto rendimiento de larga duración.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Fabricado con materiales sólidos, robustos y resistentes.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>2 niveles de velocidad.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Sistema de filtración de 3 niveles.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Manguera cónica.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Proporciona un gran poder de aspiración y de capacidad (15 litros).</li>
+        </ul>
+      </div>
+      <div class="row-col">
+        <h4>Detalles técnicos</h4>
+        <table class="specs">
+          <tr><td>Modelo</td><td>PowerProf</td></tr>
+          <tr><td>Marca</td><td>Lux</td></tr>
+          <tr><td>Procedencia</td><td>Europea</td></tr>
+          <tr><td>Potencia</td><td>1200 W</td></tr>
+          <tr><td>Aspiración</td><td>2400 mm. C.A.</td></tr>
+          <tr><td>Nivel de ruido</td><td>66 DB (A)</td></tr>
+          <tr><td>Peso</td><td>7,5 Kg</td></tr>
+          <tr><td>Longitud de cable</td><td>15 m</td></tr>
+          <tr><td>Flujo de aire</td><td>35 l/s</td></tr>
+          <tr><td>Poder de succión</td><td>220 W</td></tr>
+          <tr><td>Volumen de bolsa</td><td>15 l</td></tr>
+          <tr><td>Diámetro de manguera</td><td>32 mm</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="product-row">
+      <div class="row-col col-img"><img src="aspiradora_5.png" alt="Brilladora - Lavadora de Alfombras B-100"></div>
+      <div class="row-col">
+        <h4>Beneficios</h4>
+        <p class="product-name">Brilladora — Lavadora de Alfombras B-100</p>
+        <ul class="beneficios">
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Protección de paredes y muebles: el salpicadero y el parachoques que rodean la lavadora/pulidora protegen las paredes y los muebles.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Bandeja de almacenamiento: una bandeja apropiada para guardar la lavadora/pulidora B-100 cuando no está en uso.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Mango plegable: el exclusivo mango plegable hace que la lavadora/pulidora B-100 se pueda trasladar y guardar rápida y fácilmente.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Porta-accesorios (opcional): guarda todos los accesorios necesarios en forma organizada y lista para usar.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Sencillos controles en el mango: al moverlo a la posición de operación se enciende el equipo, y si se deja caer accidentalmente se apaga de forma automática. El suministro de detergente se controla fácil y precisamente con un disparador cerca del mango.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Sistema balanceado de tres cepillos que limpian y lustran más eficientemente; el potente detergente de espuma seca rejuvenece las alfombras con una suave acción de fregar, dejando un brillo espectacular en los suelos.</li>
+        </ul>
+      </div>
+      <div class="row-col">
+        <h4>Detalles técnicos</h4>
+        <table class="specs">
+          <tr><td>Modelo</td><td>B-100</td></tr>
+          <tr><td>Marca</td><td>Lux</td></tr>
+          <tr><td>Procedencia</td><td>USA</td></tr>
+          <tr><td>Potencia</td><td>450 W</td></tr>
+          <tr><td>Longitud del cable</td><td>12 mts</td></tr>
+          <tr><td>Voltaje</td><td>110 V</td></tr>
+          <tr><td>Capacidad del tanque</td><td>3.4 lt</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="linea-block">
+    <h2 class="linea-title"><svg viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Línea Industrial</h2>
+
+    <div class="cuadrante-comparativo">
+      <div class="comp-header">
+        <h3>Brilladoras Industriales — KF 175/Milenium</h3>
+        <p class="comp-sub">Disponible en 3 tamaños de cepillo</p>
+      </div>
+      <div class="comp-images">
+        <figure><img class="img-brilladora" src="aspiradora_8.jpg" alt="Brilladora industrial 13 pulgadas"><figcaption>13"</figcaption></figure>
+        <figure><img class="img-brilladora" src="aspiradora_9.jpg" alt="Brilladora industrial 17 pulgadas"><figcaption>17"</figcaption></figure>
+        <figure><img class="img-brilladora" src="aspiradora_10.jpg" alt="Brilladora industrial 20 pulgadas"><figcaption>20"</figcaption></figure>
+      </div>
+      <div class="comp-benefits">
+      </div>
+      <div class="comp-table-wrap">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Brilladoras — Industriales</th>
+              <th>[Modelo] 13"</th>
+              <th>[Modelo] 17"</th>
+              <th>[Modelo] 20"</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Potencia motor</td><td>1.0 / 1.5 H.P</td><td>1.5 H.P</td><td>1.5 H.P</td></tr>
+            <tr><td>Velocidad RPM</td><td>175</td><td>175</td><td>175</td></tr>
+            <tr><td>Diámetro cepillo</td><td>13"</td><td>17"</td><td>20"</td></tr>
+            <tr><td>Longitud del cable</td><td>15 metros</td><td>15 metros</td><td>15 metros</td></tr>
+            <tr><td>Peso general</td><td>73 lbs</td><td>103 lbs</td><td>112 lbs</td></tr>
+            <tr><td>Transmisión</td><td colspan="3">Piñones de acero — Triple planetario</td></tr>
+            <tr><td>Chasis</td><td colspan="3">Aluminio brillante / cromo 1.5 pulgadas</td></tr>
+            <tr><td>Accesorios opcionales</td><td colspan="3">Tanque para champoo / cepillos pisos duros-suaves / bonnet pad / químicos especiales</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="cuadrante-comparativo">
+      <div class="comp-header">
+        <h3>Aspiradoras Industriales — Inox Topper</h3>
+        <p class="comp-sub">Disponible en 4 capacidades de tanque</p>
+      </div>
+      <div class="comp-images">
+        <figure><img class="img-topper-62" src="aspiradora_11.jpg" alt="Aspiradora industrial Inox 62 litros"><figcaption>Inox 62</figcaption></figure>
+        <figure><img class="img-topper-41" src="aspiradora_12.jpg" alt="Aspiradora industrial Inox 41 litros"><figcaption>Inox 41</figcaption></figure>
+        <figure><img class="img-topper-33" src="aspiradora_14.jpg" alt="Aspiradora industrial Inox 33 litros"><figcaption>Inox 33</figcaption></figure>
+        <figure><img class="img-topper-17" src="aspiradora_13.jpg" alt="Aspiradora industrial Inox 17 litros"><figcaption>Inox 17</figcaption></figure>
+      </div>
+      <div class="comp-benefits">
+      </div>
+      <div class="comp-table-wrap">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th>Aspiradoras — Industriales</th>
+              <th>Topper Inox 62</th>
+              <th>Topper Inox 41</th>
+              <th>Topper Inox 33</th>
+              <th>Topper Inox 17</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Potencia motor</td><td>1300 W máx. — 2 motores</td><td>1300 W máx. — 1 motor</td><td>1300 W máx. — 1 motor</td><td>1300 W máx. — 1 motor</td></tr>
+            <tr><td>Voltaje</td><td>110-120</td><td>110-120</td><td>110-120</td><td>110-120</td></tr>
+            <tr><td>Succión col. agua</td><td>2380 mm</td><td>2380 mm</td><td>2380 mm</td><td>2380 mm</td></tr>
+            <tr><td>Capacidad del tanque</td><td>62 lts</td><td>41 lts</td><td>33 lts</td><td>17 lts</td></tr>
+            <tr><td>Material</td><td colspan="4">Tanque: acero inoxidable — Cabezal: polipropileno</td></tr>
+            <tr><td>Fluido de aire</td><td>600 m³/h</td><td>200 m³/h</td><td>200 m³/h</td><td>200 m³/h</td></tr>
+            <tr><td>Longitud del cable</td><td>8 metros</td><td>8 metros</td><td>8 metros</td><td>8 metros</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="linea-block">
+    <h2 class="linea-title"><svg viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Línea de Agua Pura</h2>
+
+    <div class="product-row" style="grid-template-columns:0.9fr 2.1fr;">
+      <div class="row-col col-img"><img src="purificador_1.jpg" alt="Purificador de Agua Lux - Vitality Plus"></div>
+      <div class="row-col">
+        <h4>Beneficios</h4>
+        <p class="product-name">Purificador de Agua Lux — Vitality Plus</p>
+        <p style="font-size:0.8rem; font-style:italic; color:var(--red-dark); margin-bottom:10px;">"Vive con más vitalidad, bebe agua pura"</p>
+        <ul class="beneficios">
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>5 etapas de purificación: cámara de sedimentos, cámara de carbón activado, Intell e-boiling, Nutritron y Biotron.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Tecnología ultravioleta (UV) que elimina virus y bacterias, entregando agua libre de contaminación.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Tanque de agua fría más grande en su categoría, con pico ajustable para llenar taza o jarra.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Flujo de agua continuo o momentáneo, según lo que necesites.</li>
+          <li><svg class="crown" viewBox="0 0 24 24"><path d="M3 8l4 3 5-6 5 6 4-3-2 10H5L3 8z"/></svg>Máxima retención de cloro, manteniendo los minerales esenciales del agua.</li>
+        </ul>
+        <p style="font-size:0.78rem; color:var(--muted); margin-top:12px;">* Ficha técnica detallada (voltaje, consumo, dimensiones) próximamente.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ===================== CONTACTO ===================== -->
+<section id="contacto" class="contacto-wrap">
+  <div class="section-title">Contacto</div>
+  <div class="contact-grid">
+
+    <!-- Cuadrante 1: WhatsApp -->
+    <div class="contact-box">
+      <h2>Hablemos por WhatsApp</h2>
+      <p>Cuéntanos qué modelo te interesó y con gusto te asesoramos con precios, disponibilidad y garantía.</p>
+
+      <a class="wa-btn" href="https://wa.me/593999447095?text=Hola%2C%20vi%20su%20cat%C3%A1logo%20Lux%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.28 1.18-1.77 1.24-.45.06-1.02.08-1.65-.1-.38-.11-.87-.28-1.5-.55-2.64-1.14-4.36-3.8-4.5-3.98-.13-.18-1.08-1.44-1.08-2.75 0-1.3.68-1.94.92-2.2.24-.26.53-.32.7-.32.18 0 .35 0 .5.01.16.01.38-.06.6.46.22.53.75 1.83.82 1.96.07.13.11.29.02.47-.09.18-.13.29-.26.45-.13.15-.28.34-.4.46-.13.13-.27.27-.12.53.15.26.68 1.12 1.46 1.82 1 .9 1.85 1.18 2.11 1.31.26.13.42.11.57-.07.16-.18.65-.76.82-1.02.17-.26.35-.22.58-.13.24.09 1.5.71 1.76.84.26.13.43.2.5.31.06.11.06.63-.16 1.25z"/></svg>
+        Escribir por WhatsApp
+      </a>
+
+      <div class="info-list">
+        <div class="info-item">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M3 5h4l2 5-2.5 1.5a11 11 0 005 5L13 14l5 2v4a2 2 0 01-2 2A16 16 0 013 7a2 2 0 012-2z"/></svg></span>
+          (02) 286 2056
+        </div>
+        <div class="info-item">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.5 7-12a7 7 0 10-14 0c0 5.5 7 12 7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+          Autopista Gral. Rumiñahui e Isla Baltra — San Rafael / Sangolquí
+        </div>
+      </div>
+    </div>
+
+    <!-- Cuadrante 2: Soporte Técnico -->
+    <div class="support-box">
+      <svg class="wave" viewBox="0 0 30 40" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round">
+        <path d="M2 6c5 0 5 6 10 6s5-6 10-6"/>
+        <path d="M2 18c5 0 5 6 10 6s5-6 10-6"/>
+        <path d="M2 30c5 0 5 6 10 6s5-6 10-6"/>
+      </svg>
+      <div class="wrench-badge">
+        <svg viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 00-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 005.4-5.4l-2.5 2.5-2-2 2.5-2.5z"/></svg>
+      </div>
+      <h2>Soporte técnico</h2>
+      <p>Agenda una cita para una inspección técnica sin costo. Cuida tus productos Lux y prolonga su vida útil.</p>
+
+      <a class="call-btn" href="tel:+593999447095">
+        <svg viewBox="0 0 24 24"><path d="M3 5h4l2 5-2.5 1.5a11 11 0 005 5L13 14l5 2v4a2 2 0 01-2 2A16 16 0 013 7a2 2 0 012-2z"/></svg>
+        Llámanos
+      </a>
+
+      <div class="info-list">
+        <div class="info-item">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M3 5h4l2 5-2.5 1.5a11 11 0 005 5L13 14l5 2v4a2 2 0 01-2 2A16 16 0 013 7a2 2 0 012-2z"/></svg></span>
+          0999447095
+        </div>
+        <div class="info-item">
+          <span class="ico"><svg viewBox="0 0 24 24"><path d="M12 2l9 4v6c0 5-3.8 9.4-9 10-5.2-.6-9-5-9-10V6l9-4z"/></svg></span>
+          Garantía y mantenimiento de equipos Lux
+        </div>
+      </div>
+    </div>
+
+    <!-- Cuadrante 3: Ubicación (Google Maps: Lux Valle) -->
+    <div class="contact-box map-box">
+      <div class="map-box-header">
+        <h2>Ubicación</h2>
+        <p>Autopista Gral. Rumiñahui e Isla Baltra — Sangolquí</p>
+      </div>
+      <div class="map-embed">
+        <iframe 
+          title="Ubicación Lux Valle"
+          src="https://maps.google.com/maps?q=Autopista%20General%20Rumi%C3%B1ahui%20e%20Isla%20Baltra%2C%20Sangolqu%C3%AD%2C%20Ecuador&t=&z=16&ie=UTF8&iwloc=&output=embed" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade" 
+          allowfullscreen>
+        </iframe>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>© 2026 Lux Ecuador — página personal de catálogo</footer>
+
+<!-- Botón flotante de WhatsApp -->
+<a class="wa-float" href="https://wa.me/593999447095?text=Hola%2C%20vi%20su%20cat%C3%A1logo%20Lux%20y%20quisiera%20m%C3%A1s%20informaci%C3%B3n" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12c0 1.85.5 3.58 1.36 5.07L2 22l5.06-1.33A9.94 9.94 0 0012 22c5.52 0 10-4.48 10-10S17.52 2 12 2zm5.2 14.2c-.22.62-1.28 1.18-1.77 1.24-.45.06-1.02.08-1.65-.1-.38-.11-.87-.28-1.5-.55-2.64-1.14-4.36-3.8-4.5-3.98-.13-.18-1.08-1.44-1.08-2.75 0-1.3.68-1.94.92-2.2.24-.26.53-.32.7-.32.18 0 .35 0 .5.01.16.01.38-.06.6.46.22.53.75 1.83.82 1.96.07.13.11.29.02.47-.09.18-.13.29-.26.45-.13.15-.28.34-.4.46-.13.13-.27.27-.12.53.15.26.68 1.12 1.46 1.82 1 .9 1.85 1.18 2.11 1.31.26.13.42.11.57-.07.16-.18.65-.76.82-1.02.17-.26.35-.22.58-.13.24.09 1.5.71 1.76.84.26.13.43.2.5.31.06.11.06.63-.16 1.25z"/></svg>
+</a>
+
+</body>
+</html>
